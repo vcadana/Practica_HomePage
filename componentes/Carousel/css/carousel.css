@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Default height for larger screens */
+    margin: 0 auto;
+    padding: 0;
+}
+
+.track {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 0;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.track::-webkit-scrollbar {
+    display: none;
+}
+
+.item {
+    margin: 0;
+    transition: transform 0.1s;
+}
+
+.item img {
+
+    height: 260px; /* Default for larger screens */
+    border-radius: 12px;
+
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+.item:hover img {
+    transform: scale(1.05);
+}
+
+
+/* From 600px to 430px - BIGGER images (300px) */
+@media (min-width: 430px) and (max-width: 600px) {
+    .carousel {
+        height: 450px; /* Taller container for bigger images */
+    }
+    
+    .item img {
+        height: 300px; /* Bigger images for tablet range */
+    }
+}
+
+/* From 430px to 0 - GRADUALLY get smaller starting from 300px */
+@media (max-width: 430px) {
+    .carousel {
+        height: clamp(280px, 80vw, 450px); /* Fluid height */
+    }
+    
+    .item img {
+        /* Starts at 300px at 430px, scales down to 160px at 0px */
+        height: clamp(160px, 60vw, 300px);
+    }
+    
+    .track {
+        gap: clamp(8px, 3vw, 16px); /* Fluid gap */
+    }
+}
+
+/* Very small screens refinement */
+@media (max-width: 320px) {
+    .carousel {
+        height: 260px;
+    }
+    
+    .item img {
+        height: 160px; /* Minimum size */
+    }
+}
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 50%;
+    
+    /* Canva-style gradient background */
+    background: linear-gradient(135deg, #6C8BFF 0%, #3A5BFF 50%, #1A3DFF 100%);
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: bold;
+    
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    
+    /* Smooth hover effects */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(58, 91, 255, 0.3);
+    
+    /* Ensure buttons are always on top */
+    z-index: 10000; /* Very high z-index to stay above everything */
+}
+button:active{
+    background-color:greenyellow !important;
+}
+/* Hover effect - slightly brighter gradient */
+.nav:hover {
+    background: linear-gradient(135deg, #7D9AFF 0%, #4A6BFF 50%, #2A4DFF 100%);
+    box-shadow: 0 6px 16px rgba(58, 91, 255, 0.4);
+    z-index: 10001; /* Even higher on hover */
+}
+
+/* Active/click effect */
+.nav:active {
+    background:greenyellow !important;
+}
+
+.prev { left: 0.5rem; }
+.next { right: 0.5rem; }
+.nav[hidden] { display: none; }
