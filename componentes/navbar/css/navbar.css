@@ -10,6 +10,8 @@
     font-family: 'Inter', sans-serif;
     font-weight: 500;   /*grosor de la fuente*/
     padding-top: 18.5px;
+    padding-bottom: 18.5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /**** TAMAÑO FOTO ****/
@@ -98,7 +100,49 @@
 /**** MEDIAS QUERIES ****/
 @media (max-width: 575.98px) { }
 @media (max-width: 767.98px) { }
-@media (max-width: 991.98px) { }
+@media (max-width: 991.98px) {
+    /* REORGANIZACIÓN CON FLEXBOX */
+    .navbar > .container-fluid {
+        display: flex; /*Convierte el contenedor en un flexbox para alinear elementos*/
+        flex-wrap: nowrap;  /*Evita que los elementos se salten a otra línea*/
+        justify-content: space-between; /*Distribuye el espacio sobrante entre los elementos*/
+        align-items: center;    /*Centra verticalmente todos los elementos*/
+    }
+    
+    /* BOTÓN HAMBURGUESA A LA IZQUIERDA */
+    .navbar-toggler {
+        order: 1;   /*Lo coloca PRIMERO en el orden visual (posición 1)*/
+        margin-left: 20px;
+        border: none;   /* Quita el borde por defecto de Bootstrap*/
+        flex-shrink: 0; /* Evita que se encoja */
+    }
+    
+    /* LOGO EN EL CENTRO */
+    .navbar-brand {
+        order: 2;
+        margin-left: 0;
+        position: absolute;
+        left: 20%;  /*lo muevo un poco a la derecha*/
+        flex-shrink: 0; /* Evita que se encoja */
+    }
+    
+    /* BOTONES A LA DERECHA */
+    .text-end {
+        order: 3;
+        margin-right: 20px;
+        flex-shrink: 0; /* Evita que se encoja */
+    }
+
+    /* MENÚ DESPLEGABLE OCUPE TODO EL ANCHO */
+    /*.navbar-collapse {    /*lo necesitaremos más adelante con JS
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        z-index: 1000;
+    }*/
+}
 @media (max-width: 1199.98px) { }
 @media (max-width: 1399.98px) { }
 
