@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&display=swap');
+
+.titulo{
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.06;
+  font-size: clamp(36px, 8vw, 88px);  /* Hace que vaya cambiando el tamaño y lo que ocupa dependiendo los px*/
+  text-wrap: balance;                
+  margin: 0;
+}
+
+.titulo .grad{  /* El degradado de las letras "diseñamos"*/
+  background: linear-gradient(90deg, #00a0a8, #7d2ae8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.body-text {
+  font-family: "Noto Sans"; 
+  color: #67696a;       
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.hero_button{
+    font-size: 14px;
+    display: block;
+    margin-inline: auto; /* Centra el botón */
+    border-radius: 10px; /* Redondea los bordes*/
+    border:0; /* Pone el grosor del borde a cero*/
+    box-shadow: none; /* Quita las sombras*/
+    margin-top: 20px; 
+    color:white;
+    background-color:rgb(139, 71, 226);  
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    
+}
+
+.hero_button:hover{ 
+    background-color:rgb(124, 47, 225);  
+}
+
+@media (max-width: 600px){
+  .hero_button{
+    inline-size: calc(100dvw - 32px);  /* Coge todo el ancho de la pantalla -32px (dejando 16px a cada lado de margen) */
+  }
+}
