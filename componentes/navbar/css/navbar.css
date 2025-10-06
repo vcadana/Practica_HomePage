@@ -11,7 +11,7 @@
     font-weight: 500;   /*grosor de la fuente*/
     padding-top: 18.5px;
     padding-bottom: 18.5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    /*box-shadow: 0 2px 4px rgba(0,0,0,0.1);/*sombreado del navbar*/
 }
 
 /**** TAMAÑO FOTO ****/
