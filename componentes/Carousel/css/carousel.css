@@ -1,130 +1,127 @@
-body {
+
+body { /* Reseteo de márgenes y padding del body para que no haya espacios por defecto */
     margin: 0;
     padding: 0;
 }
 
-.carousel {
+.carousel { /* Contenedor principal del carrusel */ 
     position: relative;
-    width: 100%;
-    height: 400px; /* Default height for larger screens */
-    margin: 0 auto;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 400px; /* Altura inicial del carrusel */
+    margin: 0 auto; /* Centra horizontalmente */
     padding: 0;
 }
 
-.track {
-    display: flex;
+.track { /* Pista que contiene los elementos deslizables */
+    display: flex; /* Distribuye los items en fila */
     align-items: center;
     height: 100%;
-    overflow-x: auto;
+    overflow-x: auto; /* Permite scroll horizontal si se desborda */
     gap: 16px;
     padding: 0;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Oculta scrollbar en IE/Edge */
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
 }
 
-.track::-webkit-scrollbar {
+.track::-webkit-scrollbar { /* Oculta la scrollbar en Chrome y Safari   */
     display: none;
 }
 
-.item {
+.item { /* Cada item del carrusel */
     margin: 0;
-    transition: transform 0.1s;
+    transition: transform 0.1s; /* Transición suave al transformarse */
 }
 
-.item img {
-
-    height: 260px; /* Default for larger screens */
-    border-radius: 12px;
+.item img { /* Imagen dentro de cada item */
+    height: 260px; /* Altura inicial de la imagen */
+    border-radius: 12px;  /* Bordes redondeados */
 
 }
 
-.item:hover {
+.item:hover { /* Efecto al pasar el cursor sobre el item */
     transform: scale(1.05);
 }
 
-.item:hover img {
+.item:hover img { /* Efecto al pasar el cursor sobre la imagen */
     transform: scale(1.05);
 }
 
 
-/* From 600px to 430px - BIGGER images (300px) */
-@media (min-width: 430px) and (max-width: 600px) {
+
+@media (min-width: 430px) and (max-width: 600px) { /* Media query para pantallas entre 430px y 600px */
     .carousel {
-        height: 450px; /* Taller container for bigger images */
+        height: 450px; /* Ajusta altura del carrusel */
     }
     
     .item img {
-        height: 300px; /* Bigger images for tablet range */
+        height: 300px; /* Ajusta altura de las imágenes */
     }
 }
 
-/* From 430px to 0 - GRADUALLY get smaller starting from 300px */
+
 @media (max-width: 430px) {
     .carousel {
-        height: clamp(280px, 80vw, 450px); /* Fluid height */
+        height: clamp(280px, 80vw, 450px); /* Altura adaptable según ancho de pantalla */
+    
     }
     
     .item img {
-        /* Starts at 300px at 430px, scales down to 160px at 0px */
-        height: clamp(160px, 60vw, 300px);
+        height: clamp(160px, 60vw, 300px); /* Altura adaptable de imágenes */
     }
     
     .track {
-        gap: clamp(8px, 3vw, 16px); /* Fluid gap */
+        gap: clamp(8px, 3vw, 16px);  /* Ajusta espacio entre items según pantalla */
     }
 }
 
-/* Very small screens refinement */
+
 @media (max-width: 320px) {
     .carousel {
         height: 260px;
     }
     
     .item img {
-        height: 160px; /* Minimum size */
+        height: 160px; 
     }
 }
 .nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2.5rem;
-    height: 2.5rem;
-    border: 0;
-    border-radius: 50%;
-    
-    /* Canva-style gradient background */
-    background: linear-gradient(135deg, #6C8BFF 0%, #3A5BFF 50%, #1A3DFF 100%);
-    color: #fff;
-    font-size: 1.25rem;
-    font-weight: bold;
-    
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    
-    /* Smooth hover effects */
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(58, 91, 255, 0.3);
-    
-    /* Ensure buttons are always on top */
-    z-index: 10000; /* Very high z-index to stay above everything */
+  position: absolute;
+  top: 50%; /* Centrado vertical */
+  transform: translateY(-50%); /* Ajusta exacto centrado vertical */
+  width: 3rem; /* Ancho del botón */
+  height: 3rem; /* Alto del botón */
+  border-radius: 50%; /* Forma circular */
+  border: 2px solid transparent;  /* Borde transparente para poder usar background con border-box */
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, #7D9AFF 0%, #4A6BFF 50%, #2A4DFF 100%) border-box;
+  z-index: 10000;  /* Por encima de otros elementos */
+  cursor: pointer;
 }
-button:active{
-    background-color:greenyellow !important;
+
+.nav img { /* Imagen dentro del botón de navegación */
+  width: 60%;          
+  height: 60%;
+  object-fit: contain;  /* Ajusta la imagen sin deformarla */
+  display: block;
+  margin: auto;        
 }
-/* Hover effect - slightly brighter gradient */
+
 .nav:hover {
-    background: linear-gradient(135deg, #7D9AFF 0%, #4A6BFF 50%, #2A4DFF 100%);
-    box-shadow: 0 6px 16px rgba(58, 91, 255, 0.4);
-    z-index: 10001; /* Even higher on hover */
+    box-shadow: 0 6px 16px rgba(58, 91, 255, 0.4); /* Sombra externa morada */
+
 }
 
-/* Active/click effect */
+
 .nav:active {
-    background:greenyellow !important;
+    background:
+   white padding-box,
+    rgba(146, 28, 175, 0.891) border-box; /* Color sólido en lugar del gradiente de borde */
+    box-shadow: 0 6px 16px rgba(66, 223, 255, 0.795);  /* Sombra externa azulada */
 }
 
-.prev { left: 0.5rem; }
-.next { right: 0.5rem; }
-.nav[hidden] { display: none; }
+
+
+.prev { left: 0.5rem; }/* Posición del botón "previo" */
+.next { right: 0.5rem; } /* Posición del botón "siguiente" */
+.nav[hidden] { display: none; } /* Ocultar botón si tiene atributo hidden */
