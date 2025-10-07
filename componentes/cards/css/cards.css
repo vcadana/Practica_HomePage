@@ -10,6 +10,7 @@ body {
     margin: 0 auto; /*Centra el contenedor horizontalmente*/
     padding: 80px 20px; /*60px arriba/abajo, 20px izquierda/derecha*/
     background-color: #839bb212;
+    outline: none;
 }
 
 /* Encabezado */
@@ -17,32 +18,51 @@ body {
     font-size: 65px;
     font-weight: 400;
     text-align: center;
-    color: #0b0d11;
+    color: #0E1318;
     margin-bottom: 60px;    /*espacio de abajo del texto encabezado*/
     line-height: 1.1;   /*espacio entre lineas*/
 }
 
-/* Grid de cards */
+/* cuadriculas de cards */
 .row {
     display: flex;  /*coloca las cards en la fila*/
     justify-content: center;
     gap: 1px;  /*espacio entre cards*/
+    align-items: stretch; /*Hace que todos los cards se estiren para tener la misma altura*/
+    margin-bottom: 16px;
 }
 
 .col-sm-2 {
     flex: 1;    /*cada card ocupa el mismo espacio*/
     min-width: 360px;   /*tamaño de cada card horizontal*/
-    max-width: 100px;   /*tamaño de cada card vertical*/
+    max-width: 363px;   /*tamaño de cada card vertical*/
+    display: flex;  /*Hace que el contenedor de cada card ocupe toda la altura disponible*/
 }
 
 /* Cards */
+/*Establece una altura mínima fija igual para todos los cards*/
+.card-white {
+    border: 0.2px solid #5e527532;
+    border-radius: 16px;
+    padding: 32px 24px; /*espacios dentro del card*/
+    min-height: 280px;  /* En lugar de height: 94% */
+    background-color: #40576D12;
+    width: 100%; /* OCUPA todo el ancho del contenedor */
+    display: flex; /* ACTIVA flexbox para organizar contenido */
+    flex-direction: column; /* ORGANIZA contenido verticalmente */
+    height: auto;
+}
+
 .card {
     border: 0.2px solid #5e527532;
     border-radius: 16px;
-    padding: 40px 20px; /*espacios dentro del card*/
-    height: 85%;    /*tamaño vertical del card*/
-    /*width: 100%;*/
-    background-color: #50406d12;
+    padding: 32px 24px; /*espacios dentro del card*/
+    min-height: 280px;  /* En lugar de height: 94% */
+    background-color: #E7DBFF;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
 }
 
 .card-body {
@@ -50,50 +70,64 @@ body {
     display: flex;  /*Coloca las cards en fila*/
     flex-direction: column; /*Organiza el contenido verticalmente*/
     height: 100%;    /*Ocupa toda la altura disponible*/
+    flex-grow: 1;
+    justify-content: space-between;
 }
 
 /* Texto superior (h7-div) */
-.card-textHover {
-    font-size: 11px;
-    font-weight: 500;
-    color: #0b0d11;
-    margin-bottom: 12px;
+.card-text-titulo {
     background-color: white;
-    border-radius: 16px;
-    margin-bottom: 28px;
-    display: flex;  /*crea disposición flexible*/
-    justify-content: space-between; /*crea espacio entre texto e imagen*/
-    align-items: center;    /*alineo el texto en centro del contenedor*/
+    /*display: block;*/
+    /*max-width: fit-content;*/
+    border-radius: 25px;
+    font-size: 11px;
+    color: #0D1216DB;
+    font-weight: 600;
+}
+
+.organizar-elementos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    min-height: 30px;
 }
 
 .col-6{
     width: auto;
 }
 
-/* Corona/icono */
-.img-corona{
-    background-color: transparent;
-    width: 25px;
-    height: 25px;
-    margin-bottom: 12px;
+.corona-img{
+    width: 40px;   /* Ancho deseado */
+    height: 40px;  /* Alto deseado */
+    object-fit: contain; /* Mantiene proporciones */
 }
 
 /* Título de la card */
 .card-title {
     font-size: 24px;
     font-weight: 600;
-    color: #0b0d11;
-    margin-bottom: 16px;    /*espacio debajo del titulo*/
+    color: #0E1318;
+    margin-bottom: 18px;    /*espacio debajo del titulo*/
     line-height: 1.2;   /*reduce el espacio entre lineas*/
 }
 
 /* Texto descriptivo */
 .card-text {
     font-size: 14px;
-    color: #0b0d11;
-    line-height: 1.5;   /*espacio entre lineas*/
-    margin-bottom: 24px;
-    flex-grow: 1;   /*Hace que este elemento ocupe todo el espacio disponible, empujando el botón hacia abajo*/
+    color: #0D1216DB;
+    line-height: 1.5;
+    margin-bottom: 16px; /* CAMBIAR: 20px → 16px */
+    flex-grow: 1;
+}
+
+/* AGREGAR ESTO AL FINAL DE TU CSS */
+.card-body > .row:last-child {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    height: 100%;
 }
 
 /* Botones */
@@ -104,11 +138,12 @@ body {
     padding: 9px 24px;
     font-size: 14px;
     font-weight: 550;
-    color: white;
+    color: #FFFFFF;
     text-decoration: none;  /*Elimina el subrayado de los enlaces*/
     display: inline-block;  /*Permite aplicar padding y width*/
     text-align: center;
     width: 100%;
+    margin-top: auto;
 }
 
 .btn-primary:hover {
@@ -117,20 +152,21 @@ body {
 
 /* Texto final */
 .text-endCard {
-    font-size: 15px;
-    color:  #0b0d11ba;
-    line-height: 1.6;
+    font-size: 14px;
+    color: #0D1216DB;
+    line-height: 2.5;
+    letter-spacing: 0.7px;
     text-align:center;
     display: block;
     margin: 0 auto;
     width: 100%; /* Ocupar todo el ancho */
-    padding: 0 20px; /* Añadir padding para no pegarse a los bordes */
+    padding: 40px 20px; /* Añadir padding para no pegarse a los bordes */
     box-sizing: border-box;
 }
 
 .text-endCard a {
     color:  #8B3DFF;
-    text-decoration: none;
+    text-decoration: underline;
     font-weight: 500;
 }
 
