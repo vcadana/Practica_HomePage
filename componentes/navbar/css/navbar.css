@@ -1,0 +1,166 @@
+/**** CONTENEDOR ****/
+.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/**** ENCABEZADO - SE APLICA A TODO Q HAY DENTRO ****/
+.navbar{
+    background-color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;   /*grosor de la fuente*/
+    padding-top: 18.5px;
+    padding-bottom: 18.5px;
+    /*box-shadow: 0 2px 4px rgba(0,0,0,0.1);/*sombreado del navbar*/
+}
+
+/**** TAMAÑO FOTO ****/
+.log-canva{
+    width: 90px; /* Ajusta este número según lo grande que lo quieras */
+    height: auto;
+}
+
+/**** IMAGEN DEL NAVBAR ****/
+.navbar-brand{
+    margin-left: 48px;
+}
+
+/**** DOY MARGENES AL MENU CENTRAL EN ul ****/
+.navbar-nav{
+    padding-left: 11.8%;
+    padding-right: 4%;
+    gap: 4.5px; /* Espacio uniforme entre todos los items */
+}
+
+/**** SOLO PARA LOS LINKS DEL MENU ****/
+.nav-link{
+    text-align: center;
+    display: grid;
+    padding-left: 12px; /* Aumentado padding */
+    padding-right: 12px; /* Aumentado padding */
+    padding-top: 6px; /* Añadido padding vertical */
+    padding-bottom: 6px; /* Añadido padding vertical */
+    font-family: 'Inter', sans-serif; /* MISMA FUENTE */
+    font-size: 14px; /* Tamaño ligeramente más pequeño */
+    font-weight: 500; /* Peso medio como en la imagen */
+    color: #000000;
+    border-radius: 6px; /* Bordes redondeados suaves */
+    transition: all 0.2s ease;
+}
+
+/**** SOMBREADO AL MENU ****/
+.nav-item:hover {
+    background-color: rgba(225, 222, 246, 0.427);
+    color: #000000;
+    border-radius: 15%;
+}
+
+/**** BOTONES DE LOGIN Y REGISTRO ****/
+.text-end{
+    margin-right: 64px;
+    gap: 0px; /* Reemplaza column-gap */
+    display: flex; /* Para que gap funcione */
+    align-items: center;
+}
+
+.btn{
+    padding: 7.8px 12px; /* Padding más compacto */
+    line-height: 1.2;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; /* Mismo tamaño que el menú */
+    font-weight: 500; /* Mismo peso que el menú */
+    border-radius: 8px; /* Mismo radio de borde */
+    transition: all 0.2s ease;
+}
+
+.btn-primary{
+    color: white;
+    background-color: #8b3dff;
+    border: none;
+}
+
+.btn-primary:hover{
+    background-color: #5e28b0ed; /* Morado más oscuro */
+    color: white; /* Mantiene el texto blanco */
+}
+
+.btn-outline-primary{
+    color: #000000;
+    background-color: transparent; /* Fondo transparente */
+    border: 1.5px solid #d1d5db; /* Borde gris claro como en la imagen */
+    font-weight: 500; /* Mismo peso que el menú */
+}
+
+.btn-outline-primary:hover {
+    background-color: rgba(225, 222, 246, 0.427);
+    color: #000000;
+    border-color: #d1d5db; /* Mantiene el mismo borde */
+}
+
+/**** MEDIAS QUERIES ****/
+@media (max-width: 575.98px) { }
+@media (max-width: 767.98px) { }
+@media (max-width: 991.98px) {
+    /* REORGANIZACIÓN CON FLEXBOX */
+    .navbar > .container-fluid {
+        display: flex; /*Convierte el contenedor en un flexbox para alinear elementos*/
+        flex-wrap: nowrap;  /*Evita que los elementos se salten a otra línea*/
+        justify-content: space-between; /*Distribuye el espacio sobrante entre los elementos*/
+        align-items: center;    /*Centra verticalmente todos los elementos*/
+    }
+    
+    /* BOTÓN HAMBURGUESA A LA IZQUIERDA */
+    .navbar-toggler {
+        order: 1;   /*Lo coloca PRIMERO en el orden visual (posición 1)*/
+        margin-left: 20px;
+        border: none;   /* Quita el borde por defecto de Bootstrap*/
+        flex-shrink: 0; /* Evita que se encoja */
+    }
+    
+    /* LOGO EN EL CENTRO */
+    .navbar-brand {
+        order: 2;
+        margin-left: 0;
+        position: absolute;
+        left: 20%;  /*lo muevo un poco a la derecha*/
+        flex-shrink: 0; /* Evita que se encoja */
+    }
+    
+    /* BOTONES A LA DERECHA */
+    .text-end {
+        order: 3;
+        margin-right: 20px;
+        flex-shrink: 0; /* Evita que se encoja */
+    }
+
+    /* MENÚ DESPLEGABLE OCUPE TODO EL ANCHO */
+    /*.navbar-collapse {    /*lo necesitaremos más adelante con JS
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        z-index: 1000;
+    }*/
+}
+@media (max-width: 1199.98px) { }
+@media (max-width: 1399.98px) { }
+
+/**** FUNCIONES DE BOTONES ****/
+    /*padding-block: 1px;  /*espacio interno vertical de las letras*/
+    /*padding-inline: 6px;    /*espacio interno horizontal de las letras*/
+    /*word-spacing: normal;   /*espacio normal entre las palabras*/
+    /*line-height: normal;    /*altura de la linea*/
+    /*text-transform: none;   /*no trasforma mayusculas y minusculas*/
+    /*text-indent: 0px;   /*sangria*/
+    /*text-shadow: none;  /*sombreado del texto*/
+    /*text-rendering: auto;   /*el navegador renderiza el texto*/
+    /*appearance: auto;   /*estilo de botones nativo*/
+    /*outline: none;  /*marco en botones*/
+    /*padding: 4px 8px;   /*espacio interno arriba/abajo y lados*/
+    /*padding-top: 4px;    /* Reducido verticalmente */
+    /*padding-bottom: 4px; /* Reducido verticalmente */
+    /*padding-inline: 10px; /* Ajustado horizontalmente */
+    /*line-height: 1.2;    /* Reduce la altura de línea */
+    /*width: 100%;    /*ocupa todo el ancho del contenedor*/
+    /*column-gap: 10px /*distancia entre columna*/
