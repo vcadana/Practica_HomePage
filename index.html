@@ -1,19 +1,158 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!--CSS y JS principal-->
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/index.js"></script>
-    <!--CSS y JS componentes-->
-    <link rel="stylesheet" href="componentes/banner-superior/css/banner.superior.css">
-    <script src="componentes/banner-superior/js/banner-superior.js"></script>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Canva</title>
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <!-- css y js de navbar -->
+        <link rel="stylesheet" href="componentes/navbar/css/navbar.css">
+        <link rel="stylesheet" href="componentes/cards/css/cards.css">
+        <script type="text/javascript" src="componentes/cards/js/cards.js"></script>
+        <script type="text/javascript" src="componentes/navbar/js/navbar.js"></script>
+        <!-- logo pie de pagina -->
+        <link rel="icon" href="componentes/navbar/IMG/logo_pie_pagina.png">
+        <!--fuentes de google-->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+            <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- MENU DEL ENCABEZADO -->
+        <!-- container-fluid hace q ocupe toda la pagina -->
+        <div class="container-fluid">
+            <header>
+                <!-- el nav sustituye el header con sus funciones -->
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <!-- Botón hamburguesa -->
+                    <!--poniendo primero el boton sale del lado izquierdo-->
+                    <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#menuNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Logo -->
+                    <a href="#" class="navbar-brand d-flex align-items-center">
+                        <img class="log-canva" src="componentes/navbar/IMG/ico-canva.svg"
+                            alt="Logo" role="presentation">
+                    </a>
+                    <!-- Menú que se colapsa -->
+                    <div class="collapse navbar-collapse" id="menuNav">
+                        <ul class="navbar-nav mx-auto mb-2 mb-md-0">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Diseño</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Producto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Planes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Empresas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Educación</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Ayuda</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Botones de registro y login -->
+                    <div class="text-end">
+                        <button type="button" class="btn btn-outline-primary me-2 d-none d-none d-lg-inline-block">Regístrate</button>
+                        <button type="button" class="btn btn-primary">Iniciar sesión</button>
+                    </div>
+                </nav>
+            </header>
+        </div>
+
+        <!-- Cards -->
+        <div class="apartado-cards">
+            <div class="encabezado-cards">
+                <h1>Una herramienta a tu medida</h1>
+            </div>
+            <div class="row cardCan">
+                <div class="col-sm-2 columCan mb-3 mb-sm-0">
+                    <div class="card-white">
+                        <div class="card-body">
+                            <div class="row organizar-elementos">
+                                <div class="card-text-titulo col-6 colCan" data-tooltip="Para una persona">Para una
+                                    persona</div>
+                                <div class="col-6 colCan"></div>
+                            </div>
+                            <div class="row cardCan">
+                                <h5 class="card-title">Canva Gratis</h5>
+                                <p class="card-text">Para diseñar o trabajar en cualquier tipo de proyecto.</p>
+                                <a href="#" class="btn cardBoton btn-primary">Consigue Canva Gratis</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 columCan">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row organizar-elementos">
+                                <div class="card-text-titulo col-6 colCan" data-tooltip="Para una persona">Para una
+                                    persona</div>
+                                <div class="col-6 colCan"><img class="corona-img" src="componentes/cards/IMG/corona.png" alt="corona"></div>
+                            </div>
+                            <div class="row cardCan">
+                                <h5 class="card-title">Canva Pro</h5>
+                                <p class="card-text">Para hacer crecer tu marca o tu proyecto con funciones premium.</p>
+                                <a href="#" class="btn cardBoton btn-primary">Prueba Pro gratis</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 columCan">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row organizar-elementos">
+                                <div class="card-text-titulo col-6 colCan" data-tooltip="Para tu equipo">Para tu
+                                    equipo</div>
+                                <div class="col-6 colCan"><img class="corona-img" src="componentes/cards/IMG/corona.png" alt="corona"></div>
+                            </div>
+                            <div class="row cardCan">
+                            <h5 class="card-title">Canva Equipos</h5>
+                            <p class="card-text">Para equipos que quieren
+                                colaborar en diseños, con flujos de trabajo y herramientas premium.</p>
+                            <a href="#" class="btn cardBoton btn-primary">Prueba Equipos gratis</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 columCan">
+                    <div class="card">
+                        <div class="card-body">
+                           <div class="row organizar-elementos">
+                                <div class="card-text-titulo col-6 colCan" data-tooltip="Para tu empresa">Para tu
+                                    empresa</div>
+                                <div class="col-6 colCan"><img class="corona-img" src="componentes/cards/IMG/corona.png" alt="corona"></div>
+                            </div>
+                            <div class="row cardCan">
+                            <h5 class="card-title">Canva Enterprise</h5>
+                            <p class="card-text">Para empresas que quieren
+                                centralizar y gestionar sus equipos, marcas y diseños.</p>
+                            <a href="#" class="btn cardBoton btn-primary">Habla con
+                                Ventas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span class="text-endCard">Tienes toda la información en nuestra <a href="#">página de precios</a>. Los <a href="#">centros educativos</a> y las <a href="#">sin ánimo de lucro</a> pueden disfrutar gratis de las funciones premium de Canva. </span>
+            </div>
+        </div>
+    </body>
+
 </html>
