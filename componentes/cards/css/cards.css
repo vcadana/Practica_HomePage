@@ -1,0 +1,348 @@
+.apartado-cards {
+    max-width: 1600px;  /*Limita el ancho máximo a 1200px*/
+    margin: 0 auto; /*Centra el contenedor horizontalmente*/
+    padding: 80px 20px; /*60px arriba/abajo, 20px izquierda/derecha*/
+    background-color: #839bb212;
+    outline: none;
+}
+
+/* Encabezado */
+.encabezado-cards h1 {
+    font-size: 65px;
+    font-weight: 400;
+    text-align: center;
+    color: #0E1318;
+    margin-bottom: 60px;    /*espacio de abajo del texto encabezado*/
+    line-height: 1.1;   /*espacio entre lineas*/
+}
+
+/* cuadriculas de cards */
+.cardCan {
+    display: flex;  /*coloca las cards en la fila*/
+    justify-content: center;
+    gap: 1px;  /*espacio entre cards*/
+    align-items: stretch; /*Hace que todos los cards se estiren para tener la misma altura*/
+    margin-bottom: 16px;
+    padding-block: 0px 5px;   /*espacios arriba y abajo*/
+    padding-inline: 0.5rem 0.5rem;  /*espacios izquierda y derecha*/
+}
+
+.columCan {
+    flex: 1;    /*cada card ocupa el mismo espacio*/
+    max-width: 363px;   /*tamaño de cada card vertical*/
+    display: flex;  /*Hace que el contenedor de cada card ocupe toda la altura disponible*/
+}
+
+/* Cards */
+/*Establece una altura mínima fija igual para todos los cards*/
+.card-white {
+    border: 0.2px solid #5e527532;
+    border-radius: 16px;
+    padding: 8px 18px; /*espacios dentro del card*/
+    /*min-height: 280px;  /* En lugar de height: 94% */
+    background-color: #40576D12;
+    width: 100%; /* OCUPA todo el ancho del contenedor */
+    display: flex; /* ACTIVA flexbox para organizar contenido */
+    flex-direction: column; /* ORGANIZA contenido verticalmente */
+    height: 40vh;   /*ocupa el 40% del apartado*/
+}
+
+.card {
+    border: 0.2px solid #5e527532;
+    border-radius: 16px;
+    padding: 8px 18px; /*espacios dentro del card*/
+    /*min-height: 280px;  /* En lugar de height: 94% */
+    background-color: #E7DBFF;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+}
+
+.card-body {
+    padding: 0; /*Elimina el padding por defecto de Bootstrap*/
+    display: flex;  /*Coloca las cards en fila*/
+    flex-direction: column; /*Organiza el contenido verticalmente*/
+    height: 100%;    /*Ocupa toda la altura disponible*/
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+/* Texto superior (h7-div) */
+.card-text-titulo {
+    background-color: white;
+    /*display: block;*/
+    border-radius: 25px;
+    font-size: 11px;
+    color: #0D1216DB;
+    font-weight: 600;
+    position: relative; /*es para el tooltip*/
+    display: inline-block;
+    cursor: pointer;    /*añado para el efecto hover flecha*/
+}
+
+/* Efecto hover de la tarjeta blanca */
+.card-text-titulo:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: calc(100% + 6px); /* ← CAMBIADO: separa el tooltip de la flecha */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    width: 135px;
+    z-index: 500;
+    white-space: normal;
+    text-align: center;
+}
+
+/*Organizo las columna del row*/
+.organizar-elementos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.3vh;
+    margin-left: 0.1vw;
+    min-height: 10vh;
+}
+
+.colCan{
+    width: auto;
+    padding: 0 0.5;
+}
+
+.corona-img{
+    width: 40px;   /* Ancho deseado */
+    height: 40px;  /* Alto deseado */
+    object-fit: contain; /* Mantiene proporciones */
+   /* margin-right: -0.5vh; /*arrima mas a la derecha*/
+}
+
+/* Título de la card */
+.card-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0E1318;
+    margin-bottom: 18px;    /*espacio debajo del titulo*/
+    line-height: 1.2;   /*reduce el espacio entre lineas*/
+}
+
+/* Texto descriptivo */
+.card-text {
+    font-size: 14px;
+    color: #0D1216DB;
+    line-height: 1.5;
+    margin-bottom: 16px; /* CAMBIAR: 20px → 16px */
+    flex-grow: 1;
+}
+
+/* AGREGAR ESTO AL FINAL DE TU CSS */
+.card-body > .row:last-child {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Botones */
+.cardBoton {
+    background: #8B3DFF;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 24px;
+    font-size: 14px;
+    font-weight: 550;
+    color: #FFFFFF;
+    text-decoration: none;  /*Elimina el subrayado de los enlaces*/
+    display: inline-block;  /*Permite aplicar padding y width*/
+    text-align: center;
+    width: 95%;
+    margin-top: auto;
+    margin-left: 0.5vw;
+}
+
+.cardBoton:hover {
+    background: #7e2cf8;
+}
+
+/* Texto final */
+.text-endCard {
+    font-size: 14px;
+    color: #0D1216DB;
+    line-height: 2.5;
+    letter-spacing: 0.7px;
+    text-align:center;
+    display: block;
+    margin: 0 auto;
+    width: 100%; /* Ocupar todo el ancho */
+    padding: 40px 20px; /* Añadir padding para no pegarse a los bordes */
+    box-sizing: border-box;
+}
+
+.text-endCard a {
+    color:  #8B3DFF;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.text-endCard a:hover {
+    text-decoration: underline;
+    color: #7e2cf8;
+}
+
+
+@media (max-width: 575.98px) {}
+@media (max-width: 767.98px) {
+    .encabezado-cards h1{
+        font-size: 32px;
+    }
+    .cardCan{
+        gap: 20px;  /*separación entre cards*/
+        flex-wrap: wrap; /* Añade esto para que se envuelvan en 2 filas */
+    }
+    .columCan {
+        min-width: 98vw;    /*tamaño horizontal*/
+        max-width: 100vw;
+    }
+    .card-white{
+        height: 33vh;
+    }
+    .card{
+        height: 33vh;
+    }
+    .corona-img{
+    width: 30px;   /* Ancho deseado */
+    height: 30px;  /* Alto deseado */
+    object-fit: contain; /* Mantiene proporciones */
+    margin-right: -1vh; /*arrima mas a la derecha*/
+    }
+    .card-title{
+        font-size: 20px;
+        line-height: 0; /* Reduce el interlineado */
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+    .card-text{
+        margin-bottom: 15px;
+    }
+    .cardBoton{
+        margin-top: -30px;
+        margin-left: 10px;
+    }
+    .text-endCard{
+        line-height: 20px;
+        /*text-align: justify;*/
+    }
+    
+ }
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .encabezado-cards h1{
+        font-size: 48px;
+        font-weight: 500;
+    }
+    .columCan{
+        flex: 0 0 calc(50% - 10px); /* Ocupa 50% del ancho menos la mitad del gap */
+        min-width: calc(50% - 10px); /* Fuerza el ancho al 50% */
+        max-width: calc(50% - 10px); /* Fuerza el ancho al 50% */
+        margin-bottom: 20px;
+    }
+    .card{
+        display: grid;  /*Activa el modo Grid Layout*/
+        gap: 20px;
+        height: 40vh;
+    }
+    .card-white{
+        display: grid;
+        gap: 20px;
+        height: 40vh;
+    }
+    .text-endCard{
+        line-height: 20px;
+        /*text-align: justify;*/
+    }
+    
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .encabezado-cards h1{
+        font-weight: 400;
+        font-size: 64px;
+    }
+    .cardCan {
+        gap: 1px;
+        flex-wrap: wrap; /* Permite que las cards se envuelvan en múltiples filas */
+        justify-content: center;
+    }
+    
+    .columCan {
+        flex: 0 0 calc(50% - 10px); /* Ocupa 50% del ancho menos la mitad del gap */
+        min-width: calc(50% - 10px); /* Fuerza el ancho al 50% */
+        max-width: calc(50% - 10px); /* Fuerza el ancho al 50% */
+        margin-bottom: 20px;
+    }
+    
+    .card-white, .card {
+        height: 30.5vh;
+        width: 100%;
+        display: flex; /* Cambia grid por flex para mejor control */
+        flex-direction: column;
+    }
+    .text-endCard{
+        line-height: 20px;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1399.98px) { 
+    .encabezado-cards h1{
+        font-weight: 400;
+        font-size: 64px;
+    }
+    .cardCan {
+        display: flex;
+        flex-wrap: nowrap; /* Evita que se envuelvan a otra línea */
+        justify-content: center;
+        gap: 1px; /* Espacio entre cards */
+    }
+    .columCan {
+        flex: 1; /* Cada card ocupa el mismo espacio */
+        min-width: 280px; /* Ancho mínimo para cada card */
+        max-width: 300px; /* Ancho máximo para cada card */
+    }
+    .card-white, .card {
+        height: 38vh; /* Altura consistente */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .text-endCard{
+        line-height: 20px;
+    }
+}
+@media (min-width: 1400px) and (max-width: 1499.98px){
+    .encabezado-cards h1{
+        font-weight: 400;
+        font-size: 64px;
+    }
+    .cardCan {
+        display: flex;
+        flex-wrap: nowrap; /* Evita que se envuelvan a otra línea */
+        justify-content: center;
+        gap: -20px;
+    }
+    .columCan {
+        flex: 1; /* Cada card ocupa el mismo espacio */
+    }
+    .card-white, .card {
+        height: 30vh; /* Altura consistente */
+        width: 22.5vw;
+        display: flex;
+        flex-direction: column;
+    }
+    .text-endCard{
+        line-height: 20px;
+    }
+}
