@@ -1,0 +1,103 @@
+/*                   SECTION FORMULARIO                     */
+.formularioCanva {
+  background: #a00af7;
+  background: linear-gradient(180deg,rgba(160, 10, 247, 1) 0%, rgba(84, 84, 191, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  width: auto;
+  color: white;
+  margin: 0;
+  padding: 20px 0;
+}
+
+.invitVideo video {
+  border-radius: 15px;
+}
+
+.estilo_formulario {
+  background : #a00af753;
+  border-radius: 20px;
+  margin-top: 10px;
+  text-align:start;
+  /*margin: 0; /* Elimina el margin anterior */
+  padding: 30px; /* Agrega padding en lugar de margin */
+}
+
+.encabezadoForm{
+  text-align: center;
+}
+
+.contactar h3 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.formulario {
+  padding-top: 10px;
+  justify-content: center;
+  text-align: center;
+}
+
+.relleno{
+  background: rgba(219, 207, 237, 0.308);
+  border: 1px solid rgba(16, 0, 247, 0.536);
+  border-radius: 10px;
+}
+
+section div form input[type="text"], textarea {
+  font-size: 10px;
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(16, 0, 247, 0.536);
+  border-radius: 10px;
+  background: rgba(219, 207, 237, 0.308);
+}
+
+.form-control {
+  background: rgba(219, 207, 237, 0.308);
+  border: 1px solid rgba(16, 0, 247, 0.536);
+  border-radius: 10px;
+  font-size: 10px;
+}
+
+.form-control:focus {
+  background: white; /* Esto permitirá que cambie a blanco al hacer focus */
+  border-color: rgba(16, 0, 247, 0.536);
+  box-shadow: 0 0 0 0.2rem rgba(16, 0, 247, 0.2);
+}
+
+input[type="submit"], input[type="reset"] {
+  font-size: 10px;
+  color: white;
+  width: 10%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(16, 0, 247, 0.536);
+  border-radius: 5px;
+  background: #a00af7cf;
+  cursor: pointer;
+}
+
+.envio:hover{
+  background: rgba(5, 241, 119, 0.621);
+}
+
+.borro:hover{
+  background: rgba(20, 255, 251, 0.637);
+}
+
+.apartadoVideo video {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .estilo_formulario {
+    margin-bottom: 20px;
+  }
+  
+  input[type="submit"],
+  input[type="reset"] {
+    width: 100%;
+  }
+}
