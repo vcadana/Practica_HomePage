@@ -66,7 +66,7 @@ body { /* Reseteo de márgenes y padding del body para que no haya espacios por 
     }
     
     .item img {
-        height: clamp(160px, 60vw, 300px); /* Altura adaptable de imágenes */
+        height: clamp(200px, 60vw, 300px); /* Altura adaptable de imágenes */
     }
     
     .track {
@@ -74,6 +74,11 @@ body { /* Reseteo de márgenes y padding del body para que no haya espacios por 
     }
 }
 
+@media (max-width: 780px) {
+  .nav  {
+    display: none;
+  }
+}
 
 @media (max-width: 320px) {
     .carousel {
@@ -81,7 +86,7 @@ body { /* Reseteo de márgenes y padding del body para que no haya espacios por 
     }
     
     .item img {
-        height: 160px; 
+        height: 200px; 
     }
 }
 .nav {
@@ -125,3 +130,4 @@ body { /* Reseteo de márgenes y padding del body para que no haya espacios por 
 .prev { left: 0.5rem; }/* Posición del botón "previo" */
 .next { right: 0.5rem; } /* Posición del botón "siguiente" */
 .nav[hidden] { display: none; } /* Ocultar botón si tiene atributo hidden */
+
