@@ -1,0 +1,133 @@
+
+body { /* Reseteo de márgenes y padding del body para que no haya espacios por defecto */
+    margin: 0;
+    padding: 0;
+}
+
+.carousel { /* Contenedor principal del carrusel */ 
+    position: relative;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 400px; /* Altura inicial del carrusel */
+    margin: 0 auto; /* Centra horizontalmente */
+    padding: 0;
+}
+
+.track { /* Pista que contiene los elementos deslizables */
+    display: flex; /* Distribuye los items en fila */
+    align-items: center;
+    height: 100%;
+    overflow-x: auto; /* Permite scroll horizontal si se desborda */
+    gap: 16px;
+    padding: 0;
+    -ms-overflow-style: none; /* Oculta scrollbar en IE/Edge */
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
+}
+
+.track::-webkit-scrollbar { /* Oculta la scrollbar en Chrome y Safari   */
+    display: none;
+}
+
+.item { /* Cada item del carrusel */
+    margin: 0;
+    transition: transform 0.1s; /* Transición suave al transformarse */
+}
+
+.item img { /* Imagen dentro de cada item */
+    height: 260px; /* Altura inicial de la imagen */
+    border-radius: 12px;  /* Bordes redondeados */
+
+}
+
+.item:hover { /* Efecto al pasar el cursor sobre el item */
+    transform: scale(1.05);
+}
+
+.item:hover img { /* Efecto al pasar el cursor sobre la imagen */
+    transform: scale(1.05);
+}
+
+
+
+@media (min-width: 430px) and (max-width: 600px) { /* Media query para pantallas entre 430px y 600px */
+    .carousel {
+        height: 450px; /* Ajusta altura del carrusel */
+    }
+    
+    .item img {
+        height: 300px; /* Ajusta altura de las imágenes */
+    }
+}
+
+
+@media (max-width: 430px) {
+    .carousel {
+        height: clamp(280px, 80vw, 450px); /* Altura adaptable según ancho de pantalla */
+    
+    }
+    
+    .item img {
+        height: clamp(200px, 60vw, 300px); /* Altura adaptable de imágenes */
+    }
+    
+    .track {
+        gap: clamp(8px, 3vw, 16px);  /* Ajusta espacio entre items según pantalla */
+    }
+}
+
+@media (max-width: 780px) {
+  .nav  {
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+    .carousel {
+        height: 260px;
+    }
+    
+    .item img {
+        height: 200px; 
+    }
+}
+.nav {
+  position: absolute;
+  top: 50%; /* Centrado vertical */
+  transform: translateY(-50%); /* Ajusta exacto centrado vertical */
+  width: 3rem; /* Ancho del botón */
+  height: 3rem; /* Alto del botón */
+  border-radius: 50%; /* Forma circular */
+  border: 2px solid transparent;  /* Borde transparente para poder usar background con border-box */
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, #7D9AFF 0%, #4A6BFF 50%, #2A4DFF 100%) border-box;
+  z-index: 10000;  /* Por encima de otros elementos */
+  cursor: pointer;
+}
+
+.nav img { /* Imagen dentro del botón de navegación */
+  width: 60%;          
+  height: 60%;
+  object-fit: contain;  /* Ajusta la imagen sin deformarla */
+  display: block;
+  margin: auto;        
+}
+
+.nav:hover {
+    box-shadow: 0 6px 16px rgba(58, 91, 255, 0.4); /* Sombra externa morada */
+
+}
+
+
+.nav:active {
+    background:
+   white padding-box,
+    rgba(146, 28, 175, 0.891) border-box; /* Color sólido en lugar del gradiente de borde */
+    box-shadow: 0 6px 16px rgba(66, 223, 255, 0.795);  /* Sombra externa azulada */
+}
+
+
+
+.prev { left: 0.5rem; }/* Posición del botón "previo" */
+.next { right: 0.5rem; } /* Posición del botón "siguiente" */
+.nav[hidden] { display: none; } /* Ocultar botón si tiene atributo hidden */
+
