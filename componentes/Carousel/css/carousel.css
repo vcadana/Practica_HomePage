@@ -1,8 +1,4 @@
 
-body { /* Reseteo de márgenes y padding del body para que no haya espacios por defecto */
-    margin: 0;
-    padding: 0;
-}
 
 .carousel { /* Contenedor principal del carrusel */ 
     position: relative;

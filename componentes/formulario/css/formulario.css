@@ -19,7 +19,9 @@
   /*margin: 0; /* Elimina el margin anterior */
   padding: 30px; /* Agrega padding en lugar de margin */
 }
-
+.noMargin {
+  margin-right: 0px !important;
+}
 .encabezadoForm{
   text-align: center;
 }
